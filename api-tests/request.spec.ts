@@ -1,13 +1,13 @@
 import supertest from "supertest";
 import { url } from "./utils";
-import {expect} from "chai"
+import {expect} from "chai";
 const request = supertest(url);
 
 
 describe('people', async () => {
     it('get people async', async () => {
-        let res = await request.get('people/1')
+        const res = await request.get('people/1');
 
-        expect(res.body.name).to.eql("Luke Skywalker")
-    })
-})
+        expect(res.body.name).to.eql("Luke Skywalker");
+    });
+});
